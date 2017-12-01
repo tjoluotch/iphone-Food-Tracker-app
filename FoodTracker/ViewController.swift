@@ -9,10 +9,12 @@
 import UIKit
 
 // view controller is subclass of UIVeiwController
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,
+                                        UINavigationControllerDelegate {
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Actions
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        // Hide the keyboard
+        // if the user touches the image view while typing in the text field
+        // the keyboard is dismissd properly
+        nameTextField.resignFirstResponder()
+        
+        // UIImageController is an image picker that let's users pick media from their photo
+        // library
+        let imagePickerController = UIImagePickerController()
+        
+        // only allow photo's to be picked not taken
+        // sets the image picker controller's source aka the place where it gets its images
+        // UIImagePickerControllerSourceType, which is an enumeration.
+        // This means you can write its value as the abbreviated form .photoLibrary instead of
+        // UIImagePickerControllerSourceType.photoLibrary.
+        // Recall that you can use the abbreviated form anytime the enumeration value’s type is already known.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // make sure the view controller is notified when the user picks an image
+        imagePickerController.delegate = self
+        
+        // method beign called on ViewController
+        // method asks view controller to present view controller defined by imagePickerController
+        present(imagePickerController, animated: true, completion: nil)
+    }
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
     mealNameLabel.text = "Default Text"
     }

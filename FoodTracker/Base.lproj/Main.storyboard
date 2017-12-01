@@ -46,11 +46,15 @@
                                     <constraint firstAttribute="trailing" secondItem="r74-zf-Zd0" secondAttribute="trailing" id="r1B-H6-s0K"/>
                                 </constraints>
                             </stackView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-M5-t2M">
-                                <rect key="frame" x="27" y="188" width="320" height="320"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-M5-t2M">
+                                <rect key="frame" x="16" y="154" width="320" height="320"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1oQ-M5-t2M" secondAttribute="height" multiplier="1:1" id="I9c-PF-Slw"/>
+                                    <constraint firstAttribute="width" secondItem="1oQ-M5-t2M" secondAttribute="height" multiplier="1:1" id="mCU-w7-MCW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TLm-XX-Txb" appends="YES" id="BvT-Kj-xgV"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,9 +68,15 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="88u-aJ-rNs" id="v0F-Bj-MFb"/>
                         <outlet property="nameTextField" destination="r74-zf-Zd0" id="Oxn-dz-eAQ"/>
+                        <outlet property="photoImageView" destination="1oQ-M5-t2M" id="e0b-Zp-nLx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TLm-XX-Txb">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="8on-Pn-iRL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
