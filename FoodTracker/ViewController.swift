@@ -26,7 +26,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard
         textField.resignFirstResponder()
+        return true
     }
+    func textFieldDidEndEditing(_ textField: UITextField){
+        mealNameLabel.text = textField.text
+    }
+    
     // MARK: Actions
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
     mealNameLabel.text = "Default Text"
