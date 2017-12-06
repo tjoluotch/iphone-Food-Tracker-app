@@ -46,8 +46,12 @@
                                     <constraint firstAttribute="trailing" secondItem="r74-zf-Zd0" secondAttribute="trailing" id="r1B-H6-s0K"/>
                                 </constraints>
                             </stackView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-M5-t2M">
-                                <rect key="frame" x="16" y="154" width="320" height="320"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMI-oQ-Ung" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                <rect key="frame" x="29" y="501" width="200" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="283" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-M5-t2M">
+                                <rect key="frame" x="16" y="163" width="320" height="320"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1oQ-M5-t2M" secondAttribute="height" multiplier="1:1" id="mCU-w7-MCW"/>
@@ -82,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="540" height="540"/>
+        <image name="defaultPhoto" width="360" height="360"/>
     </resources>
 </document>
